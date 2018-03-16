@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-import requests,json,time,graphitesend,redis
+import requests, graphitesend, redis
+import json, time
 
 
 def SendData():
@@ -38,7 +39,4 @@ if __name__=="__main__":
 
     while True:
         SendData()
-        time.sleep(10)
-        print("==x==x==")
-
-
+        time.sleep(5)
