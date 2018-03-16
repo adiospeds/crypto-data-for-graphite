@@ -17,10 +17,10 @@ def SendData():
                 new_key_1 = sitename + '-' + crypto_name + '-last'
                 new_val_1 = data['Last']
                 new_dict.update({new_key_1:new_val_1})
-                new_key_2 = sitename + '-' + crypto_name + '-Bid'
+                new_key_2 = sitename + '-' + crypto_name + '-buy'
                 new_val_2 = data['Bid']
                 new_dict.update({new_key_2:new_val_2})
-                new_key_3 = sitename + '-' + crypto_name + '-Ask'
+                new_key_3 = sitename + '-' + crypto_name + '-sell'
                 new_val_3 = data['Ask']
                 new_dict.update({new_key_3:new_val_3})
         g.send_dict(new_dict)
