@@ -41,4 +41,4 @@ if __name__=="__main__":
   
     while True:
         SendData()
-        time.sleep(22)
+        time.sleep(15)
