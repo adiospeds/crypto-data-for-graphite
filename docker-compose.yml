@@ -1,30 +1,31 @@
-versiom: '3'
+version: '3'
+
 services:
   graphite:
     image: graphiteapp/graphite-statsd
     restart: always
     ports:
-      127.0.0.1:8080:80
-      127.0.0.1:2003-2004:2003-2004
-      127.0.0.1:2023-2024:2023-2024
-      127.0.0.1:8125:8125/udp
-      127.0.0.1:8126:8126
-   volumes:
-      /opt/graphite/conf:/opt/graphite/conf
-      /opt/graphite/storage:/opt/graphite/storage
-      /opt/statsd:/opt/statsd
+      - "127.0.0.1:8080:80"
+      - "127.0.0.1:2003-2004:2003-2004"
+      - "127.0.0.1:2023-2024:2023-2024"
+      - "127.0.0.1:8125:8125/udp"
+      - "127.0.0.1:8126:8126"
+    volumes:
+      - "/opt/graphite/conf:/opt/graphite/conf"
+      - "/opt/graphite/storage:/opt/graphite/storage"
+      - "/opt/statsd:/opt/statsd"
 
   graphana:
     image: grafana/grafana
     restart: always
     environment:
-      GF_SECURITY_ADMIN_PASSWORD=changethis1ater
+      - "GF_SECURITY_ADMIN_PASSWORD=changethis1ater"
     links:
-      graphite
+      - graphite
     ports:
-      3000:3000
+      - "3000:3000"
     volumes:
-      /var/lib/grafana:/var/lib/grafana
+      - "/var/lib/grafana:/var/lib/grafana"
 
 
 
