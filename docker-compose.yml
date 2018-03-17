@@ -27,6 +27,11 @@ services:
     volumes:
       - "/var/lib/grafana:/var/lib/grafana"
 
-
+  redis:
+    image: redis
+    links:
+      - graphite
+    ports:
+      - "127.0.0.1:6379:6379"
 
 
