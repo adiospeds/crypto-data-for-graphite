@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python36
 
 import requests, graphitesend, redis
 import time, json
