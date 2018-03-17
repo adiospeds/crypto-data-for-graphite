@@ -37,7 +37,7 @@ def SendData():
 
 if __name__=="__main__":
 
-  cryptos = ["bitcoin", "ethereum", "ripple", "bitcoin-cash", "litecoin", "cardano", "neo", "stellar", "eos", "monero", "dash", "iota", "nem", "tron", "ethereum-classic", "vechain", "lisk", "nano", "omisego", "qtum", "bitcoin-gold", "zcash", "verge", "dogecoin", "siacoin", "ontology", "aeternity", "0x", "electroneum", "digibyte", "golem-network-tokens", "gas", "basic-attention-token", "zcoin", "deepbrain-chain", "red-pulse", "request-network", "zilla", "ncash", "aion" ]
+  cryptos = ["bitcoin", "ethereum", "ripple", "bitcoin-cash", "litecoin", "cardano", "neo", "stellar", "eos", "monero", "dash", "iota", "nem", "tron", "ethereum-classic", "vechain", "lisk", "nano", "omisego", "qtum", "bitcoin-gold", "zcash", "verge", "dogecoin", "siacoin", "ontology", "aeternity", "0x", "electroneum", "digibyte", "golem-network-tokens", "gas", "basic-attention-token", "zcoin", "deepbrain-chain", "red-pulse", "request-network", "zilla", "nucleus-vision", "aion" ]
 
   URL = "https://api.coinmarketcap.com/v1/ticker/?convert=INR&limit=1000"
   SERVER = '127.0.0.1' 
