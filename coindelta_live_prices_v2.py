@@ -35,7 +35,7 @@ if __name__=="__main__":
     CARBON_PORT = 2003
     REDIS_PORT = 6379
     r = redis.Redis(host=SERVER, port=REDIS_PORT, db=0)
-    g = graphitesend.init(graphite_server=SERVER, graphite_port=CARBON_PORT, group='metrics-coindelta')
+    g = graphitesend.init(graphite_server=SERVER, graphite_port=CARBON_PORT, prefix='ohio-analyzer-1.metrics-coindelta', system_name='')
 
     while True:
         SendData()
