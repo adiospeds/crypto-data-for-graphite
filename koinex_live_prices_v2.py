@@ -14,16 +14,16 @@ def SendData():
       crypto_name = crypto
       new_key_1 = sitename + '-' + crypto_name.lower() + '-last'
       new_val_1 = AllData['stats'][crypto_name]['last_traded_price']
-      new_dict.update({new_key_1:new_val_1})
+      new_dict.update({new_key_1:int(0 if new_val_1 is None else new_val_1)})
       new_key_2 = sitename + '-' + crypto_name.lower() + '-buy'
       new_val_2 = AllData['stats'][crypto_name]['highest_bid']
-      new_dict.update({new_key_2:new_val_2})
+      new_dict.update({new_key_2:int(0 if new_val_2 is None else new_val_2)})
       new_key_3 = sitename + '-' + crypto_name.lower() + '-sell'
       new_val_3 = AllData['stats'][crypto_name]['lowest_ask']
-      new_dict.update({new_key_3:new_val_3})
+      new_dict.update({new_key_3:int(0 if new_val_3 is None else new_val_3)})
       new_key_4 = sitename + '-' + crypto_name.lower() + '-24h-volume-inr'
       new_val_4 = AllData['stats'][crypto_name]['vol_24hrs']
-      new_dict.update({new_key_4:new_val_4})
+      new_dict.update({new_key_4:int(0 if new_val_4 is None else new_val_4)})
     g.send_dict(new_dict)
     r.hmset("Koinex", new_dict) 
      
