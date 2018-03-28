@@ -23,9 +23,12 @@ def SendData():
            new_key = sitename + '-' + crypto_name.lower() + "-sell"
          elif 'lastTradePrice' in key:
            new_key = sitename + '-' + crypto_name.lower() + "-last"
-         new_dict.update({new_key:val})
-       g.send_dict(new_dict)
-       r.hmset("Bitbns", new_dict)
+         
+         if '_' not in key:
+           new_dict.update({new_key:val})
+
+    g.send_dict(new_dict)
+    r.hmset("Bitbns", new_dict)
   else:
     pass
 
