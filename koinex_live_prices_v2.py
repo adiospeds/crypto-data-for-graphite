@@ -2,10 +2,10 @@
 
 import requests, graphitesend, redis
 import json, time
-import pdb
+#import pdb
 
 def SendData():
-  pdb.set_trace()
+  #pdb.set_trace()
   response = requests.get(URL)
 
   if response.status_code == 200:
@@ -44,4 +44,4 @@ if __name__=="__main__":
   
     while True:
         SendData()
-        time.sleep(10)
+        time.sleep(5)
