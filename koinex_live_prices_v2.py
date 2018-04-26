@@ -2,15 +2,17 @@
 
 import requests, graphitesend, redis
 import json, time
+import pdb
 
 def SendData():
+  pdb.set_trace()
   response = requests.get(URL)
 
   if response.status_code == 200:
     AllData = response.json()
     new_dict = {}
     sitename = "koinex"
-    for crypto in AllData['stats']:
+    for tradecur in AllData['stats']['inr']:
       crypto_name = crypto
       new_key_1 = sitename + '-' + crypto_name.lower() + '-last'
       new_val_1 = AllData['stats'][crypto_name]['last_traded_price']
@@ -42,4 +44,4 @@ if __name__=="__main__":
   
     while True:
         SendData()
-        time.sleep(5)
+        time.sleep(10)
