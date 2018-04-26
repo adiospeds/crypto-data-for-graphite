@@ -30,7 +30,7 @@ def SendData():
     r.hmset("Koinex", new_dict) 
      
   else:
-    pass
+    pass ## left for some stuffing here
 
 if __name__=="__main__":
     
